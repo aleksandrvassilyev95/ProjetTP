@@ -26,6 +26,3 @@ function __construct($id, $description) {
 }
     
 }
-
-
-?>

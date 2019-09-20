@@ -1,7 +1,5 @@
 <?php
+include_once "bugManager.php";
 
-$bugs = file_get_contents("data.txt");
-echo $bugs;
-
-        
-?>
+$manager = new BugManager();
+$manager->load();

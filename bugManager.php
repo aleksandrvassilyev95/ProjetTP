@@ -1,6 +1,6 @@
 <?php 
 
-include bug.php;
+include 'bug.php';
 
 class BugManager {
     public $bugs;
@@ -12,13 +12,27 @@ class BugManager {
     function setBugs($bugs) {
         $this->bugs = $bugs;
     }
-    function __construct($bugs) {
+    function __constructor($bugs) {
         $this->bugs = $bugs;
     }
     
     //charger en memoire ce qui se trouve dans le sense de données
     function load () {  
-        
+        //recuperer le CSV
+        $newBug = fopen("data.txt", "r");
+        //passer le CSV ligne par pigne
+        while (!feof($newBug)) {
+            $ligne = fgets($newBug);
+            $this->bugs = $ligne;
+            print '<pre>';
+            print_r($this->bugs);
+            print '<pre>';
+            
+        }
+        fclose($newBug);
+      
+        //pour chaque ligne créer un nouveau bug 
+        //inserer le bug dans $this->bugs
     }
     
     //ajouter en bug a la liste
