@@ -1,8 +1,11 @@
-<?php 
+<?php
 
 class Bug {
+
     public $id;
     public $description;
+    public $titre;
+    public $statut;
 
     function getId() {
         return $this->id;
@@ -10,6 +13,14 @@ class Bug {
 
     function getDescription() {
         return $this->description;
+    }
+
+    function getTitre() {
+        return $this->titre;
+    }
+
+    function getStatut() {
+        return $this->statut;
     }
 
     function setId($id) {
@@ -20,9 +31,19 @@ class Bug {
         $this->description = $description;
     }
 
-function __construct($id, $description) {
-    $this->id = $id;
-    $this->description = $description;
-}
-    
+    function setTitre($titre) {
+        $this->titre = $titre;
+    }
+
+    function setStatut($statut) {
+        $this->statut = $statut;
+    }
+
+    function __construct($id = null, $description = null, $titre = null, $statut = null) {
+        $this->id = $id;
+        $this->description = $description;
+        $this->titre = $titre;
+        $this->statut = $statut;
+    }
+
 }
