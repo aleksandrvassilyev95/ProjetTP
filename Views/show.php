@@ -1,9 +1,10 @@
 <?php
-include_once "bugManager.php";
+include_once "../Models/bugManager.php";
 
 $id = $_GET['id'];
 $bugManager = new BugManager();
 $bug = $bugManager->find($id);
+
 ?>
 
 <!DOCTYPE html>
@@ -25,6 +26,9 @@ $bug = $bugManager->find($id);
             <th>
                 Titre
             </th> 
+            <th>
+                Date
+            </th> 
             
         </tr>
 
@@ -38,8 +42,19 @@ $bug = $bugManager->find($id);
                 <td>
             <?php echo $bug->getTitre();?>
                 </td>      
+                <td>
+            <?php echo $bug->getDate();?>
+                </td> 
 
     </tr>
+    
+    <table>
+        <tr>
+            <td>
+                <a class="button" href="list.php">Liste</a>
+            </td>
+        </tr>
+    </table>
         
         </table>  
 </body>

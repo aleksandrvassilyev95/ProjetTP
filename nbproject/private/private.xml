@@ -5,9 +5,11 @@
         <group>
             <file>file:/C:/xampp/htdocs/dashboard/works/tp1/list.php</file>
             <file>file:/C:/xampp/htdocs/dashboard/works/tp1/bugManager.php</file>
+            <file>file:/C:/xampp/htdocs/dashboard/works/tp1/manager.php</file>
             <file>file:/C:/xampp/htdocs/dashboard/works/tp1/show.php</file>
-            <file>file:/C:/xampp/htdocs/dashboard/works/tp1/bug.php</file>
             <file>file:/C:/xampp/htdocs/dashboard/works/tp1/BDD.php</file>
+            <file>file:/C:/xampp/htdocs/dashboard/works/tp1/bug.php</file>
+            <file>file:/C:/xampp/htdocs/dashboard/works/tp1/add.php</file>
             <file>file:/C:/xampp/htdocs/dashboard/works/tp1/style.css</file>
         </group>
     </open-files>

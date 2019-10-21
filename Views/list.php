@@ -1,9 +1,9 @@
 <?php
-include_once "bugManager.php";
+include_once "../Models/bugManager.php";
 
 
 $manager = new BugManager();
-$manager->load();
+$bugs = $manager->findAll();
 ?>
 
 <!DOCTYPE html>
@@ -14,6 +14,13 @@ $manager->load();
 </head>
 <body>
     <div class="three"><h1>Liste des bugs</h1></div>
+    <table>
+        <tr>
+            <td>
+                <a class="button" href="add.php">Ajouter</a>
+            </td>
+        </tr>
+    </table>
     <table>
         
         <tr>
@@ -28,14 +35,18 @@ $manager->load();
             </th>
             <th>
                 Statut
-            </th>   
+            </th>  
+            <th>
+                Date
+            </th> 
             <th>
                 Détail
             </th> 
+
         </tr>
         
         <?php
-        foreach ($manager->getBugs() as $bug) {
+        foreach ($bugs as $bug) {
         ?>
         <tr>   
                 <td>
@@ -49,19 +60,19 @@ $manager->load();
                 </td>    
                 <td>
             <?php echo $bug->getStatut();?>
-                </td>    
+                </td>  
+                 
                 <td>
-            <a class="button"  href="show.php?id=<?=$bug->getId()?>">Détail</a>         
+            <?php echo $bug->getDate();?>  
                 </td>
+                
+                <td>
+             <a class="button"  href="show.php?id=<?=$bug->getId()?>">Détail</a> 
+                </td> 
+                
     </tr>
         <?php } ?>  
         </table>  
-    <table>
-        <tr>
-            <td>
-                <a class="button" href="add.php">Ajouter</a>
-            </td>
-        </tr>
-    </table>
+    
 </body>
 </html>

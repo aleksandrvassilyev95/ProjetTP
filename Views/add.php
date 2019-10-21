@@ -1,9 +1,15 @@
 <?php
-include_once "bugManager.php";
+include_once "../Models/bugManager.php";
+include_once '../Models/bug.php';
 
 if (!empty($_POST["title"])) {
 $manager = new BugManager();
-$manager->ajouter($_POST);  
+
+$bug = new Bug();
+$bug->setTitre($_POST['title']);
+$bug->setDescription($_POST['commentaire']);
+
+$manager->add($bug);  
 } 
 
 ?>
@@ -19,19 +25,19 @@ $manager->ajouter($_POST);
     <table>
         
         <tr>
-            <th>
+            <th align="center">
                 Titre
             </th>
-            <th>
+            <th align="center">
                 Commentaire
             </th>
         </tr>
         <form method="POST" action="">
         <tr>
-            <td>
+            <td align="center">
                 <input type="text" id="tit" name="title" required size="45" size="10">
             </td>
-            <td>
+            <td align="center">
                <input type="text" id="com" name="commentaire" required size="45" size="10">
             </td>
         </tr>
@@ -39,6 +45,9 @@ $manager->ajouter($_POST);
             <td>
             <input class="buttoninput" type="submit" value="Envoyer">
             </form>
+            </td>
+            <td>
+            <a class="button" href="list.php">Liste</a>
             </td>
         </tr>
 
