@@ -9,7 +9,7 @@ $bugs = $manager->findAll();
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <title>List</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -68,6 +68,7 @@ $bugs = $manager->findAll();
                 
                 <td>
              <a class="button"  href="show.php?id=<?=$bug->getId()?>">Détail</a> 
+
                 </td> 
                 
     </tr>

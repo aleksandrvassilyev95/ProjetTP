@@ -85,4 +85,3 @@ class BugManager extends Manager{
 
 }
 
-//<script text="text/javascript">alert('Hacked')</script>

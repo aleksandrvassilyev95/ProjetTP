@@ -1,16 +1,7 @@
 <?php
 
 class Manager {
-    
-//    public function connectDb() {
-//        
-//        include 'BDD.php';
-//        
-//        $dbh = new PDO('mysql:host=' . $DB_HOST . ';dbname=' . $DB_NAME . ';charset=utf8', $DB_LOGIN, $DB_PASSWROD);
-//        return $dbh;
-//        
-//    }
-//}
+
     
 public function connectDb(){
 
